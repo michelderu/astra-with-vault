@@ -1,5 +1,5 @@
 # 🔐 DataStax Astra and Vault
-Using Vault (or a similar product) is a great idea to keep your environment secured. But how do you manage the Secure Connect Bundle that connects you to DataStax Astra? Surely, uploading it to your github repo is not an option. With the help of our friends at Fiverr who ran into this issue, here's a simple solution to it.
+Using Vault (or a similar product) is a great idea to keep your environment secured. But how do you manage the Secure Connect Bundle that connects you to DataStax Astra? Surely, uploading it to your github repo is not an option. With the help of our friends at Fiverr who ran into this issue, here's a simple solution to it. The code samples are based on Kotlin, but it should be resonably self-explanatory to transform to another language.
 
 ## Step 1️⃣ - Encode the Secure Connect Bundle to Base64
 Locally use your application code to encode (ISO compliant) the zip to a Base64. You do this once:
