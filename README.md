@@ -4,12 +4,16 @@ Using Vault (or a similar product) is a great idea to keep your environment secu
 ## Step 1️⃣ - Encode the Secure Connect Bundle to Base64
 Locally use your application code to encode (ISO compliant) the zip to a Base64. You do this once:
 ```java
-val f = File("/path-to/secure-connect-messaging-dev.zip").readText(Charsets.ISO_8859_1)
+val f = File("/path-to/SecureConnectBundle.zip").readText(Charsets.ISO_8859_1)
 val b64 = Base64.getEncoder().encodeToString(f.toByteArray(Charsets.ISO_8859_1))
+```
+Alternatively you can also use the `base64` cli available on most Linux distributions:
+```sh
+base64 -w 0 /path-to/SecureConnectBundle.zip
 ```
 
 ## Step 2️⃣ - Store the resulting string in your provider
-Copy the string into any secret / value provider service of your choosing
+Copy the string into any secret / value provider service of your choosing.
 
 ## Step 3️⃣ - Use the string in your driver connection setup
 In the driver config, upon retrieval of the secret, decode it and supply it as a byte stream to the driver. The variable `base64SecureConnectZip` contains the Base64 encoded string from Vault.
